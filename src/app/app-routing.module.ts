@@ -47,6 +47,8 @@ const routes: Routes = [
   { path: 'consulta-wizard', component: WizardComponent, canActivate: [GuardService] },
   { path: 'buscar', component: BuscarComponent, canActivate: [GuardService] },
   { path: 'reporte', component: ReporteComponent, canActivate: [GuardService] },
+  { path: 'signos', component: SignosComponent, canActivate: [GuardService] },
+  { path: 'perfil', component: PerfilComponent},
   { path: 'not-403', component: Not403Component },
   { path: 'not-404', component: Not404Component },
   { path: 'login', component: LoginComponent },
@@ -56,9 +58,8 @@ const routes: Routes = [
     ]
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '**', redirectTo: 'not-404', pathMatch: 'full' },
-  { path: 'signos', component: SignosComponent, canActivate: [GuardService] },
-  { path: 'perfil', component: PerfilComponent, canActivate: [GuardService] }
+  { path: '**', redirectTo: 'not-404', pathMatch: 'full' }
+
 ];
 
 @NgModule({
