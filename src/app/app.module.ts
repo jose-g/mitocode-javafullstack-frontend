@@ -34,6 +34,7 @@ import { TokenComponent } from './pages/login/recuperar/token/token.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { SignosComponent } from './pages/signos/signos.component';
+import { SignosEdicionComponent } from './pages/signos/signos-edicion/signos-edicion.component';
 
 export function tokenGetter() {
   let tk = sessionStorage.getItem(environment.TOKEN_NAME);
@@ -63,7 +64,8 @@ export function tokenGetter() {
     RecuperarComponent,
     TokenComponent,
     PerfilComponent,
-    SignosComponent
+    SignosComponent,
+    SignosEdicionComponent
   ],
   entryComponents: [MedicoDialogoComponent, BuscarDialogoComponent],
   imports: [

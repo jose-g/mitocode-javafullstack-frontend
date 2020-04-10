@@ -20,6 +20,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignosComponent } from './pages/signos/signos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { SignosEdicionComponent } from './pages/signos/signos-edicion/signos-edicion.component';
 
 
 const routes: Routes = [
@@ -41,13 +42,18 @@ const routes: Routes = [
       { path: 'edicion/:id', component: ExamenEdicionComponent }
     ], canActivate: [GuardService]
   },
+  {
+    path: 'signos', component: SignosComponent, children: [
+      { path: 'nuevo', component: SignosEdicionComponent },
+      { path: 'edicion/:id', component: SignosEdicionComponent }
+    ], canActivate: [GuardService]
+  },  
   { path: 'medico', component: MedicoComponent, canActivate: [GuardService] },
   { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },
   { path: 'consulta-especial', component: EspecialComponent, canActivate: [GuardService] },
   { path: 'consulta-wizard', component: WizardComponent, canActivate: [GuardService] },
   { path: 'buscar', component: BuscarComponent, canActivate: [GuardService] },
   { path: 'reporte', component: ReporteComponent, canActivate: [GuardService] },
-  { path: 'signos', component: SignosComponent, canActivate: [GuardService] },
   { path: 'perfil', component: PerfilComponent},
   { path: 'not-403', component: Not403Component },
   { path: 'not-404', component: Not404Component },

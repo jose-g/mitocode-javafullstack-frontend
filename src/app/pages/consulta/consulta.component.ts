@@ -129,8 +129,10 @@ export class ConsultaComponent implements OnInit {
     consulta.paciente = paciente;
     consulta.numConsultorio = "1";
     //ISODATE
+    console.log(this.fechaSeleccionada);
     let tzoffset = (this.fechaSeleccionada).getTimezoneOffset() * 60000;
     let localISOTime = (new Date(Date.now() - tzoffset)).toISOString();
+    console.log(localISOTime);
     //console.log(localISOTime);//yyyy-mm-ddTHH:mm:ss
     consulta.fecha = localISOTime;
     consulta.detalleConsulta = this.detalleConsulta;

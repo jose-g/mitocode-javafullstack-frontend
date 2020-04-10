@@ -1,9 +1,10 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Signos } from 'src/app/_model/signos';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { SignosService } from 'src/app/_service/Signos.Service';
+import { SignosService } from 'src/app/_service/signos.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -22,7 +23,8 @@ export class SignosComponent implements OnInit {
 
   constructor(
     private signosService: SignosService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public route:ActivatedRoute
   ) { }
 
   ngOnInit(){

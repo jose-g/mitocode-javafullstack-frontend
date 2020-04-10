@@ -13,8 +13,8 @@ import '../../../assets/login-animation.js';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: string;
-  clave: string;
+  usuario: string = 'jguerrero74@hotmail.com';
+  clave: string ='password';
   mensaje: string;
   error: string;
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.menuService.menuCambio.next(data);
       });
 
-      this.router.navigate(['paciente']);
+      this.router.navigate(['signos']);
 
     });
   }
